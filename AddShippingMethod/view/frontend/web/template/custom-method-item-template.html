@@ -9,7 +9,8 @@
                    ko-checked="element.isSelected"
                    ko-value="method.carrier_code + '_' + method.method_code"
                    attr="'aria-labelledby': 'label_method_' + method.method_code + '_' + method.carrier_code + ' ' + 'label_carrier_' + method.method_code + '_' + method.carrier_code,
-                        'checked': element.rates().length == 1 || element.isSelected" />
+                        'checked': element.rates().length == 1 || element.isSelected"
+                    value="" />
         </td>
         <!-- ko if: method.carrier_code != 'dqa_shipping' -->
         <td class="col col-price">
@@ -17,7 +18,7 @@
         </td>
         <!-- /ko -->
         <!-- ko if: method.carrier_code == 'dqa_shipping' -->
-        <td class="col col-price">
+        <td class="col col-price-custom">
             <input type="text" class="col col-price custom-shipping" title="Nhap gia cho shipping????"  />
         </td>
         <!-- /ko -->
@@ -28,9 +29,7 @@
             attr="'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code"
             text="method.carrier_title" />
         <!-- ko if: method.carrier_code == 'dqa_shipping' -->
-        <td class="col col-price">
-            <button type="button" title="submit" class="update-price">Apply</button>
-        </td>
+        <td><button class="button-apply" click="element.saveShipping" >apply</button></td>
         <!-- /ko -->
     </tr>
     <!-- Row for shipping method description -->
@@ -50,4 +49,4 @@
         </td>
     </tr>
 </tbody>
-<script>
+

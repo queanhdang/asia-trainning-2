@@ -48,18 +48,6 @@ class DQAShipping extends \Magento\Shipping\Model\Carrier\AbstractCarrier implem
             $method->setCost($this->getConfigData('express_price'));
             $result->append($method);
         // }
-        //Check if business method is enabled
-        // if ($this->getConfigData('business_enabled')) {
-        //     $method = $this->_rateMethodFactory->create();
-        //     $method->setCarrier($this->_code);
-        //     $method->setCarrierTitle($this->getConfigData('name'));
-        //     $method->setMethod('business');
-        //     $method->setMethodTitle($this-
-        //     >getConfigData('business_title'));
-        //     $method->setPrice($this->getConfigData('business_price'));
-        //     $method->setCost($this->getConfigData('business_price'));
-        //     $result->append($method);
-        // }
         return $result;
     }
     /**
